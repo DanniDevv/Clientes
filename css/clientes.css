@@ -1,0 +1,112 @@
+@font-face {
+    font-family: 'Futura';
+    src: local('Futura Bold'), local('Futura-Bold'),
+        url('FuturaLT-Bold.woff2') format('woff2'),
+        url('FuturaLT-Bold.woff') format('woff'),
+        url('FuturaLT-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Futura', sans-serif;
+    background-image: url(../img/FONDO.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    margin-top: 5%;
+    transition: transform 0.3s ease;
+}
+
+.titulo h1 {
+    font-size: 50px;
+    color: white;
+    margin: 0;
+}
+
+.titulo img {
+    width: 100px;
+    margin-left: 30px;
+}
+
+.titulo:hover {
+    transform: scale(1.1);
+}
+
+/* desde aqui comienza todo lo de los cardas */
+.conteiner-card {
+    padding: 20px; /* Espacio alrededor del contenido */
+    border-radius: 10px; /* Bordes redondeados */
+    transition: box-shadow 0.3s ease; /* Transición suave para la sombra */
+    max-width: 400px; /* Ancho máximo del contenedor de tarjetas */
+    margin: 0 auto; /* Centrar el contenedor horizontalmente */
+}
+
+
+
+/* Estilos para la tarjeta */
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrar horizontalmente */
+    background-color: rgba(248, 248, 248, 0.4); /* Fondo más transparente */
+    padding: 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves para el color de fondo y transformación */
+}
+.card img {
+    max-width: 100px; /* Ancho máximo para la imagen */
+    height: auto;
+}
+
+.card:hover {
+    background-color: #e0e0e0; /* Cambio de color de fondo al pasar el cursor */
+    transform: scale(1.05); /* Escalar un poco la tarjeta al pasar el cursor */
+}
+
+.texto {
+    display: none; /* Oculta el texto por defecto */
+    flex: 1; /* Permite que el texto ocupe todo el espacio disponible */
+    opacity: 0; /* Inicialmente oculto */
+    margin-left: 10px; /* Espacio a la derecha del texto antes de la animación */
+    animation: fadeIn 0.5s ease forwards; /* Aplica la animación de desvanecimiento */
+}
+
+.card:hover .texto {
+    display: block; /* Muestra el texto al pasar el cursor */
+    animation: fadeIn 0.5s ease forwards, slideIn 0.5s ease forwards; /* Aplica la animación de desvanecimiento y deslizamiento */
+}
+
+/* Definición de la animación de desvanecimiento */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        margin-left: 10px;
+    }
+    to {
+        opacity: 1;
+        margin-left: 0;
+    }
+}
+
+/* Definición de la animación de deslizamiento */
+@keyframes slideIn {
+    from {
+        transform: translateX(20px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
